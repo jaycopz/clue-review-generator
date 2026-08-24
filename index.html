@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09090b">
+  <title>CLUE Review Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="brand">
+      <div class="logo-mark">C</div>
+      <div>
+        <div class="brand-name">CLUE</div>
+        <div class="brand-sub">LOUNGE & BAR</div>
+      </div>
+    </header>
+
+    <section class="hero" id="setup">
+      <p class="eyebrow">REVIEW GENERATOR</p>
+      <h1>Share your<br><span>CLUE experience.</span></h1>
+      <p class="intro">Choose your rating and what stood out. We'll create a natural-sounding review with a fresh combination every time.</p>
+
+      <div class="card">
+        <div class="step-label">01 <span>YOUR RATING</span></div>
+        <div class="stars" id="stars" role="radiogroup" aria-label="Rating">
+          <button class="star" data-rating="1" aria-label="1 star">★</button>
+          <button class="star" data-rating="2" aria-label="2 stars">★</button>
+          <button class="star" data-rating="3" aria-label="3 stars">★</button>
+          <button class="star" data-rating="4" aria-label="4 stars">★</button>
+          <button class="star" data-rating="5" aria-label="5 stars">★</button>
+        </div>
+        <div class="rating-text" id="ratingText">Tap a star to begin</div>
+
+        <div class="step-label gap">02 <span>WHAT STOOD OUT?</span><small>Choose up to 4</small></div>
+        <div class="chips" id="chips">
+          <button class="chip" data-topic="music">🎵 Music</button>
+          <button class="chip" data-topic="food">🍽️ Food</button>
+          <button class="chip" data-topic="drinks">🍸 Drinks</button>
+          <button class="chip" data-topic="ambience">✨ Ambience</button>
+          <button class="chip" data-topic="service">🙌 Service</button>
+          <button class="chip" data-topic="dj">🎧 DJ</button>
+          <button class="chip" data-topic="crowd">🕺 Crowd</button>
+        </div>
+
+        <div class="step-label gap">03 <span>WRITING STYLE</span></div>
+        <div class="styles" id="styles">
+          <button class="style-option active" data-style="casual"><b>Casual</b><span>Sounds like a real night-out post</span></button>
+          <button class="style-option" data-style="polished"><b>Polished</b><span>Clean and well-written</span></button>
+          <button class="style-option" data-style="short"><b>Short</b><span>Quick and natural</span></button>
+        </div>
+
+        <button class="primary" id="generateBtn" disabled>CREATE MY REVIEW <span>→</span></button>
+        <p class="fineprint">Generated locally in your browser. No account, AI API or server required.</p>
+      </div>
+    </section>
+
+    <section class="result hidden" id="result">
+      <div class="result-top">
+        <button class="back" id="backBtn">← Start over</button>
+        <div class="result-badge">YOUR REVIEW</div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-rating" id="resultStars">★★★★★</div>
+        <p class="review-text" id="reviewText"></p>
+        <div class="review-meta"><span id="styleLabel">CASUAL</span><span>•</span><span>FRESH VERSION</span></div>
+      </div>
+
+      <div class="actions">
+        <button class="secondary" id="anotherBtn">↻ Generate another</button>
+        <button class="primary" id="copyBtn">Copy review <span>✓</span></button>
+      </div>
+      <div class="copied hidden" id="copied">Copied to clipboard.</div>
+
+      <div class="tip">
+        <b>Before you post</b>
+        <span>Only share a review that honestly reflects your own experience. You can edit the draft before posting.</span>
+      </div>
+    </section>
+
+    <footer>
+      <span>CLUE LOUNGE & BAR</span>
+      <span>•</span>
+      <span>LOCAL REVIEW TOOL</span>
+    </footer>
+  </main>
+  <script src="reviews.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
